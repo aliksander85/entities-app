@@ -1,8 +1,11 @@
+$placeholder-color: #9e9e9e
+$green-color: #4caf50
+
 .category
   display: block
 
 .mat-raised-button.mat-primary
-  background-color: #4caf50
+  background-color: $green-color
   margin: 93px auto 0
   display: block
   font-weight: normal
@@ -57,13 +60,13 @@
     border: none
 
     &::-webkit-input-placeholder
-      color: #9e9e9e
+      color: $placeholder-color
     &::-moz-placeholder
-      color: #9e9e9e
+      color: $placeholder-color
     &:-ms-input-placeholder
-      color: #9e9e9e
+      color: $placeholder-color
     &:-moz-placeholder
-      color: #9e9e9e
+      color: $placeholder-color
 
 
 .filter-container
@@ -84,7 +87,7 @@
 
   .filtering-icon
     &.active
-      color: #4caf50
+      color: $green-color
 
 .entities-wrapper
   padding: 0
