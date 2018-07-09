@@ -1,6 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { FormBuilder, FormGroup } from '@angular/forms';
 import { ENTITIES } from '../../mock-entities';
 import { Entity } from '../../entity';
 
@@ -11,7 +10,6 @@ import { Entity } from '../../entity';
 })
 export class AddEntitiesComponent implements OnInit {
 
-  options: FormGroup;
   entitiesList: Entity[] = [];
   searchText = '';
   shouldSort = false;
@@ -19,13 +17,8 @@ export class AddEntitiesComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<AddEntitiesComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any,
-    fb: FormBuilder
+    @Inject(MAT_DIALOG_DATA) public data: any
   ) {
-    this.options = fb.group({
-      hideRequired: false,
-      floatLabel: 'auto',
-    });
     for (const entity of ENTITIES) {
       const newEntry = Object.assign({}, entity);
       if (data && data.length) {
