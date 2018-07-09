@@ -1,0 +1,17 @@
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <mat-icon class="add-entity-btn" (click)="openDialog($event)">add_circle</mat-icon>
+        <span class="panel-title secondary-text" *ngIf="!entitiesList.length">Connect Entity</span>
+        <span class="panel-title" *ngIf="entitiesList.length">Entities Connected ({{ entitiesList.length }})</span>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <ul class="unstyled-list" *ngIf="entitiesList.length">
+      <li *ngFor="let entity of entitiesList">
+        <span>{{ entity.name }}</span>
+        <span class="secondary-text">{{ entity.category }}</span>
+      </li>
+    </ul>
+  </mat-expansion-panel>
+</mat-accordion>

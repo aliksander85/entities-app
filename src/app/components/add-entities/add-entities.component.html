@@ -1,0 +1,32 @@
+<header class="dialog-header">
+  <p class="secondary-text text-center">2016 KPI:$15M Renewal Revenue (Strategic Goal)</p>
+  <mat-icon class="dialog-close" (click)="closeDialog()">clear</mat-icon>
+</header>
+<section>
+  <h1 class="text-center">Add entities</h1>
+  <mat-card>
+    <mat-card-content>
+      <mat-form-field
+        appearance="fill"
+        [hideRequiredMarker]="options.value.hideRequired"
+        [floatLabel]="options.value.floatLabel"
+      >
+        <mat-placeholder>
+          <mat-icon>search</mat-icon> Search entity
+        </mat-placeholder>
+        <input matInput>
+      </mat-form-field>
+      <mat-list role="list">
+        <mat-list-item role="listitem" *ngFor="let entity of entitiesList">
+          <mat-checkbox [(ngModel)]="entity.checked">
+            {{ entity.name }}
+            <span class="category secondary-text">{{ entity.category }}</span>
+          </mat-checkbox>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+  <button mat-raised-button color="primary" class="text-uppercase text-center" (click)="connectEntities()">Connect</button>
+</section>
+
+
