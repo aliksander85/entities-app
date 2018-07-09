@@ -31,7 +31,7 @@ export class AddEntitiesComponent implements OnInit {
       if (data && data.length) {
         for (const item of data) {
           if (item.id === entity.id) {
-            newEntry.checked = true;
+            newEntry['checked'] = true;
           }
         }
       }
@@ -47,7 +47,7 @@ export class AddEntitiesComponent implements OnInit {
   }
 
   connectEntities(): any {
-    const result =  this.entitiesList.filter((item: any) => item.checked);
+    const result = this.entitiesList.filter((item: any) => item.checked);
     this.closeDialog(result);
   }
 
