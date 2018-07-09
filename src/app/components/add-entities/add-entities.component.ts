@@ -13,6 +13,7 @@ export class AddEntitiesComponent implements OnInit {
 
   options: FormGroup;
   entitiesList: Entity[] = ENTITIES;
+  searchText: string = '';
 
   constructor(
     public dialogRef: MatDialogRef<AddEntitiesComponent>,

@@ -20,13 +20,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { AppComponent } from './app.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { AddEntitiesComponent } from './components/add-entities/add-entities.component';
+import { SearchPipe } from './pipes/search/search.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MainPageComponent,
-    AddEntitiesComponent
+    AddEntitiesComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,

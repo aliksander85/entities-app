@@ -14,10 +14,10 @@
         <mat-placeholder>
           <mat-icon>search</mat-icon> Search entity
         </mat-placeholder>
-        <input matInput>
+        <input matInput [(ngModel)]="searchText">
       </mat-form-field>
       <mat-list role="list">
-        <mat-list-item role="listitem" *ngFor="let entity of entitiesList">
+        <mat-list-item role="listitem" *ngFor="let entity of entitiesList | search:searchText">
           <mat-checkbox [(ngModel)]="entity.checked">
             {{ entity.name }}
             <span class="category secondary-text">{{ entity.category }}</span>
