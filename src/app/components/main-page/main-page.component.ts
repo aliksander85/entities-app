@@ -25,7 +25,8 @@ export class MainPageComponent implements OnInit {
       width: '100vw',
       maxWidth: '100vw',
       height: '100vh',
-      maxHeight: '100vh'
+      maxHeight: '100vh',
+      data: this.entitiesList
     });
 
     dialogRef.afterClosed().subscribe(result => {

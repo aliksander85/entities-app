@@ -13,7 +13,7 @@ export class AddEntitiesComponent implements OnInit {
 
   options: FormGroup;
   entitiesList: Entity[] = [];
-  searchText: string = '';
+  searchText = '';
 
   constructor(
     public dialogRef: MatDialogRef<AddEntitiesComponent>,
@@ -25,7 +25,15 @@ export class AddEntitiesComponent implements OnInit {
       floatLabel: 'auto',
     });
     for (const entity of ENTITIES) {
-      this.entitiesList.push(Object.assign({}, entity));
+      const newEntry = Object.assign({}, entity);
+      if (data && data.length) {
+        for (const item of data) {
+          if (item.id === entity.id) {
+            newEntry.checked = true;
+          }
+        }
+      }
+      this.entitiesList.push(newEntry);
     }
   }
 
