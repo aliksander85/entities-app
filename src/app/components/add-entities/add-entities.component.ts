@@ -14,6 +14,8 @@ export class AddEntitiesComponent implements OnInit {
   options: FormGroup;
   entitiesList: Entity[] = [];
   searchText = '';
+  shouldSort = false;
+  ascending = false;
 
   constructor(
     public dialogRef: MatDialogRef<AddEntitiesComponent>,
@@ -47,6 +49,20 @@ export class AddEntitiesComponent implements OnInit {
   connectEntities(): any {
     const result =  this.entitiesList.filter((item: any) => item.checked);
     this.closeDialog(result);
+  }
+
+  toggleOrderFilter(): void {
+    if (!this.shouldSort) {
+      this.shouldSort = true;
+      this.ascending = true;
+    } else {
+      this.shouldSort = false;
+      this.ascending = false;
+    }
+  }
+
+  toggleAscending(): void {
+    this.ascending = !this.ascending;
   }
 
 }

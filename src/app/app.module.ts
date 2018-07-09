@@ -21,6 +21,7 @@ import { AppComponent } from './app.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { AddEntitiesComponent } from './components/add-entities/add-entities.component';
 import { SearchPipe } from './pipes/search/search.pipe';
+import { OrderByPipe } from './pipes/order-by/order-by.pipe';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { SearchPipe } from './pipes/search/search.pipe';
     AppComponent,
     MainPageComponent,
     AddEntitiesComponent,
-    SearchPipe
+    SearchPipe,
+    OrderByPipe
   ],
   imports: [
     BrowserModule,

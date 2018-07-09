@@ -15,9 +15,14 @@
           <mat-icon>search</mat-icon> Search entity
         </mat-placeholder>
         <input matInput [(ngModel)]="searchText">
+        <div class="filter-container">
+          <mat-icon class="filtering-icon" (click)="toggleOrderFilter()" [ngClass]="{'active': shouldSort}">filter_list</mat-icon>
+          <mat-icon *ngIf="shouldSort && ascending" (click)="toggleAscending()">vertical_align_bottom</mat-icon>
+          <mat-icon *ngIf="shouldSort && !ascending" (click)="toggleAscending()">vertical_align_top</mat-icon>
+        </div>
       </mat-form-field>
       <mat-list role="list">
-        <mat-list-item role="listitem" *ngFor="let entity of entitiesList | search:searchText">
+        <mat-list-item role="listitem" *ngFor="let entity of entitiesList | search:searchText | orderBy:shouldSort:ascending">
           <mat-checkbox [(ngModel)]="entity.checked">
             {{ entity.name }}
             <span class="category secondary-text">{{ entity.category }}</span>
