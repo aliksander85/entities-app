@@ -1,10 +1,72 @@
+$width-main-content: 400px
+
+.main-content-block
+  position: absolute
+  top: 50%
+  transform: translateY(-50%)
+  left: 0
+  right: 0
+  width: 100%
+
+.connected-entities-list
+  max-width: $width-main-content
+  margin: 0 auto
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+
+.connected-entities-list-empty
+  padding: 19px 24px 19px
+
+.panel-header
+  padding: 12px 32px 14px 22px
+  &.mat-expanded
+    padding: 6px 32px 0 22px
+
 .panel-title
-  line-height: 24px
+  line-height: 36px
   display: inline-block
   margin-left: 5px
+  overflow: hidden
+
+.add-entity-btn-container
+  cursor: pointer
+  width: 36px
+  height: 36px
+  position: relative
+  display: inline-block
+
+.add-entity-btn-background
+  position: absolute
+  top: 5px
+  left: 5px
+  right: 5px
+  bottom: 5px
+  width: 26px
+  height: 26px
+  border-radius: 50%
+  background-color: #69686a
 
 .add-entity-btn
-  width: 24px
-  height: 24px
+  position: absolute
+  left: 0
+  top: 0
+  right: 0
+  bottom: 0
+  width: 36px
+  height: 36px
+  font-size: 36px
   color: #e5e3e9
-  border-radius: 50%
+  cursor: pointer
+
+.mat-expansion-panel-body
+  padding: 0 24px 10px
+
+.entity-list
+  margin-top: 18px
+  margin-bottom: 0
+
+.entity-item
+  margin-bottom: 41px
+  &:last-of-type
+    margin-bottom: 5px

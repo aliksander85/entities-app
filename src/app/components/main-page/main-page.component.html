@@ -1,16 +1,27 @@
-<mat-accordion>
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>
+<mat-card *ngIf="!entitiesList.length" class="connected-entities-list-empty connected-entities-list main-content-block">
+  <mat-card-content>
+    <div class="add-entity-btn-container">
+      <div class="add-entity-btn-background"></div>
+      <mat-icon class="add-entity-btn" (click)="openDialog($event)">add_circle</mat-icon>
+    </div>
+    <span class="panel-title secondary-text" *ngIf="!entitiesList.length">Connect Entity</span>
+  </mat-card-content>
+</mat-card>
+<mat-accordion *ngIf="entitiesList.length" class="connected-entities-list main-content-block">
+  <mat-expansion-panel class="connected-entities-list">
+    <mat-expansion-panel-header class="panel-header">
       <mat-panel-title>
-        <mat-icon class="add-entity-btn" (click)="openDialog($event)">add_circle</mat-icon>
-        <span class="panel-title secondary-text" *ngIf="!entitiesList.length">Connect Entity</span>
+        <div class="add-entity-btn-container">
+          <div class="add-entity-btn-background"></div>
+          <mat-icon class="add-entity-btn" (click)="openDialog($event)">add_circle</mat-icon>
+        </div>
         <span class="panel-title" *ngIf="entitiesList.length">Entities Connected ({{ entitiesList.length }})</span>
       </mat-panel-title>
     </mat-expansion-panel-header>
-    <ul class="unstyled-list" *ngIf="entitiesList.length">
-      <li *ngFor="let entity of entitiesList">
+    <ul class="unstyled-list entity-list" *ngIf="entitiesList.length">
+      <li *ngFor="let entity of entitiesList" class="entity-item">
         <span>{{ entity.name }}</span>
-        <span class="secondary-text">{{ entity.category }}</span>
+        <span class="secondary-text element-block">{{ entity.category }}</span>
       </li>
     </ul>
   </mat-expansion-panel>
