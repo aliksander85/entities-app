@@ -1,15 +1,16 @@
 <header class="dialog-header">
-  <p class="secondary-text text-center">2016 KPI:$15M Renewal Revenue (Strategic Goal)</p>
+  <p class="secondary-text text-center header-text">2016 KPI:$15M Renewal Revenue (Strategic Goal)</p>
   <mat-icon class="dialog-close" (click)="closeDialog()">clear</mat-icon>
 </header>
 <section>
-  <h1 class="text-center">Add entities</h1>
-  <mat-card>
+  <h1 class="text-center dialog-title">Add entities</h1>
+  <mat-card class="entities-wrapper">
     <mat-card-content>
       <mat-form-field
         appearance="fill"
         [hideRequiredMarker]="options.value.hideRequired"
         [floatLabel]="options.value.floatLabel"
+        class="form-search"
       >
         <mat-placeholder>
           <mat-icon>search</mat-icon> Search entity
@@ -21,11 +22,11 @@
           <mat-icon *ngIf="shouldSort && !ascending" (click)="toggleAscending()">vertical_align_top</mat-icon>
         </div>
       </mat-form-field>
-      <mat-list role="list">
-        <mat-list-item role="listitem" *ngFor="let entity of entitiesList | search:searchText | orderBy:shouldSort:ascending">
+      <mat-list role="list" class="entities-list">
+        <mat-list-item class="entities-list-item" role="listitem" *ngFor="let entity of entitiesList | search:searchText | orderBy:shouldSort:ascending">
           <mat-checkbox [(ngModel)]="entity.checked">
-            {{ entity.name }}
-            <span class="category secondary-text">{{ entity.category }}</span>
+            <span class="entity-text-info">{{ entity.name }}</span>
+            <span class="category secondary-text entity-text-info">{{ entity.category }}</span>
           </mat-checkbox>
         </mat-list-item>
       </mat-list>

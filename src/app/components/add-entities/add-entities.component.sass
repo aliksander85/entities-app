@@ -3,18 +3,37 @@
 
 .mat-raised-button.mat-primary
   background-color: #4caf50
+  margin: 93px auto 0
+  display: block
+  font-weight: normal
+  padding: 12px 86px
 
 .dialog-header
   position: relative
+  min-height: 56px
+  padding-top: 20px
+
+  .header-text
+    margin: 0
+    padding: 0 80px
 
 .dialog-close
   position: absolute
   right: 10px
   top: 0
   cursor: pointer
-  color: blue
+  color: #c2c2c2
+  font-size: 56px
+  width: 56px
+  height: 56px
   &:hover
     background-color: rgba(0, 0, 0, .1)
+
+.dialog-title
+  font-weight: normal
+  font-size: 31px
+  margin-top: 10px
+  margin-bottom: 42px
 
 .filter-container
   -webkit-user-select: none
@@ -28,3 +47,19 @@
   .filtering-icon
     &.active
       color: #4caf50
+
+.entities-wrapper
+  padding: 0
+
+.entities-list
+
+
+  .entities-list-item
+    border-top: 1px solid #eeeeee
+    padding: 12px 14px
+
+  .entity-text-info
+    margin-left: 7px
+    font-size: 16px
+    &.category
+      font-size: 13px
