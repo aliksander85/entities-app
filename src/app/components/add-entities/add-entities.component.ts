@@ -12,7 +12,7 @@ import { Entity } from '../../entity';
 export class AddEntitiesComponent implements OnInit {
 
   options: FormGroup;
-  entitiesList: Entity[] = ENTITIES;
+  entitiesList: Entity[] = [];
   searchText: string = '';
 
   constructor(
@@ -24,6 +24,9 @@ export class AddEntitiesComponent implements OnInit {
       hideRequired: false,
       floatLabel: 'auto',
     });
+    for (const entity of ENTITIES) {
+      this.entitiesList.push(Object.assign({}, entity));
+    }
   }
 
   ngOnInit() {
